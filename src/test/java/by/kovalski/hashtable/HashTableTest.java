@@ -5,8 +5,6 @@ import by.kovalski.hashtable.hashtable.impl.LinearHashTable;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
@@ -103,18 +101,6 @@ public class HashTableTest {
     Set<Key> set = hashTable.getKeySet();
     for (Key key : set) {
       Assertions.assertEquals(Integer.parseInt(key.data), hashTable.get(key));
-    }
-  }
-
-  @Test
-  void aLotElementsTestHashMap() {
-    Map<Key, Integer> map = new HashMap<>();
-    for (int i = 0; i < 10_000; i++) {
-      map.put(new Key(Integer.toString(i)), i);
-    }
-    Set<Key> set = map.keySet();
-    for (Key key : set) {
-      Assertions.assertEquals(Integer.parseInt(key.data), map.get(key));
     }
   }
 
